@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="header__fields">
+    <ul class="header__fields_list">
+        <li class="header__fields_element">
+            <a href="{{ url_for('hello_world') }}">Home</a></li>
+        <li class="header__fields_element">
+            <a href="{{ url_for('rating_g') }}">Rating G</a>
+        </li>
+        <li class="header__fields_element">
+            <a href="{{ url_for('rating_family') }}">Rating Family</a>
+        </li>
+        <li class="header__fields_element">
+            <a href="{{ url_for('rating_adult') }}">Rating Adult</a>
+        </li>
+    </ul>
+</div>
+<div class="body__container">
+    <div class="body__title">Поиск</div>
+    <form action="/movie/title" class="title_name_search_form" method="GET">
+        <span class="title_name_subtitle">Title search:</span>
+        <input type="text" name="title_name" class="title_name_search_field" placeholder="Type here...">
+        <button type="submit" class="title_name_search_button">Search</button>
+    </form>
+    <form action="/movie/year" class="year_name_search_form" method="GET">
+        <span class="year_name_subtitle">Year search:</span>
+        <input type="text" name="year_name" class="year_name_search_field" placeholder="Type here...">
+        <button type="submit" class="year_name_search_button">Search</button>
+    </form>
+</div>
+</body>
+</html>

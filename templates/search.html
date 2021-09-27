@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<div class="header__fields">
+    <ul class="header__fields_list">
+        <li class="header__fields_element">
+            <a href="{{ url_for('hello_world') }}">Home</a></li>
+        <li class="header__fields_element">
+            <a href="{{ url_for('rating_g') }}">Rating G</a>
+        </li>
+        <li class="header__fields_element">
+            <a href="{{ url_for('rating_family') }}">Rating Family</a>
+        </li>
+        <li class="header__fields_element">
+            <a href="{{ url_for('rating_adult') }}">Rating Adult</a>
+        </li>
+    </ul>
+</div>
+<div class="wrapper">
+    {
+    {% for key, value in movie.items() %}
+        <dt>{{ key|e }}</dt>
+        <dd>{{ value|e }}</dd>
+    {% endfor %}
+    }
+</div>
+</body>
+</html>
